@@ -1,14 +1,15 @@
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text } from "react-native"; 
+import { SafeAreaView } from "react-native";
 import React from 'react'
-const Home: React.FC = ()=>{
+import tw from 'twrnc';
+const Home = ()=>{
     return(
         <>
-        <SafeAreaView>
-            <View>
+        <SafeAreaView className='bg-gray-600 mt-2' >
+            
                 <Text>Hello Umer</Text>
+                <Text className='text-blue-800'>Hello Umer</Text>
                 <Text>Hello Umer</Text>
-                <Text>Hello Umer</Text>
-            </View>
         </SafeAreaView>
         </>
     )
