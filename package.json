@@ -1,7 +1,7 @@
 {
-  "name": "coffee-app",
+  "name": "my-app",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -9,41 +9,21 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "^48.0.7",
-    "expo-constants": "~14.2.1",
-    "expo-linking": "~4.0.1",
-    "expo-router": "^1.2.0",
-    "expo-splash-screen": "~0.18.1",
-    "expo-status-bar": "~1.4.2",
+    "@expo/vector-icons": "^13.0.0",
+    "@types/tailwindcss": "^3.1.0",
+    "expo": "~49.0.11",
+    "expo-status-bar": "~1.6.0",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-icons": "^4.11.0",
-    "react-native": "0.71.3",
-    "react-native-gesture-handler": "~2.9.0",
-    "react-native-reanimated": "~2.14.4",
-    "react-native-safe-area-context": "^4.5.0",
-    "react-native-screens": "~3.20.0",
-    "react-native-web": "~0.18.7",
+    "react-native": "0.72.4",
     "tailwindcss": "^3.3.2",
-    "twrnc": "^3.6.3"
+    "react-native-safe-area-context": "4.6.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.3",
-    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
-    "@tsconfig/react-native": "^3.0.2",
-    "@types/jest": "^29.5.3",
-    "@types/react": "^18.2.17",
-    "@types/react-test-renderer": "^18.0.0",
-    "typescript": "^5.1.6"
-  },
-  "resolutions": {
-    "metro": "^0.73.7",
-    "metro-resolver": "^0.73.7"
-  },
-  "overrides": {
-    "metro": "^0.73.7",
-    "metro-resolver": "^0.73.7"
+    "@babel/core": "^7.20.0",
+    "@types/react": "~18.2.14",
+    "@types/react-native": "^0.57.65",
+    "typescript": "^5.1.3"
   },
   "private": true
 }
