@@ -20,7 +20,7 @@ import Carousel from "react-native-snap-carousel";
 export default function App() {
   const [activeCategory, setActiveCategory] = useState(1);
   return (
-    <View className="flex-1 relative">
+    <View className="flex-1 relative bg-white">
       <StatusBar />
       <Image
         source={require("./assets/images/beansBackground1.png")}
@@ -28,14 +28,14 @@ export default function App() {
       />
 
       {/* avatar and bell icon */}
-      <SafeAreaView className="flex relative justify-between">
-        <View className="px-4 flex-row justify-between items-center">
+      <SafeAreaView className="flex justify-between">
+        <View className="mx-4 flex-row justify-between items-center">
           <Image
             source={require("./assets/images/avatar.png")}
             className="h-[36px] w-[36px] rounded-full"
           />
 
-          <View className="flex justify-between flex-row items-center space-x-2">
+          <View className="justify-between flex-row items-center space-x-2">
             <FontAwesome
               name="map-marker"
               size={25}
@@ -67,7 +67,8 @@ export default function App() {
             horizontal
             showsHorizontalScrollIndicator={false}
             data={categories}
-            keyExtractor={(item) => item.id.toString()} // Uncomment if 'id' is not a string
+            keyExtractor={(item) => item.id.toString()}
+            className="overflow-visible"
             renderItem={({ item }) => {
               const isActive = item.id === activeCategory;
               const activeTextClass = isActive
@@ -90,14 +91,15 @@ export default function App() {
                 </TouchableOpacity>
               );
             }}
-            />
+          />
         </View>
-            </SafeAreaView>
-
-        {/* Carousel */}
-        <View className="overflow-visible flex justify-center mt-16 flex-1">
-          <View>
-
+      </SafeAreaView>
+      {/* Carousel */}
+      <View
+        style={{ backgroundColor: "transparent", zIndex: -1 }}
+        className="overflow-visible flex justify-center mt-2 flex-1 bg-red-200"
+      >
+        <View className="border-blue-500 ">
           <Carousel
             containerCustomStyle={{ overflow: "visible" }}
             data={coffeeItems}
@@ -109,8 +111,8 @@ export default function App() {
             itemWidth={250} //card width
             slideStyle={{ display: "flex", alignItems: "center" }}
           />
-            </View>
         </View>
+      </View>
     </View>
   );
 }

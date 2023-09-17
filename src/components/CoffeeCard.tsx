@@ -16,19 +16,20 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({ item }) => {
         width: 250,
       }}
     >
-      <View 
-      style={{
-        shadowColor:"black",
-        shadowRadius:30,
-        shadowOffset: {width:0, height:40},
-        shadowOpacity:0.8
-      }}
-      className="flex-row justify-center -mt-12">
+      <View
+        style={{
+          shadowColor: "black",
+          shadowRadius: 30,
+          shadowOffset: { width: 0, height: 40 },
+          shadowOpacity: 0.8,
+        }}
+        className="flex-row justify-center -mt-6 "
+      >
         <Image
           source={item.image}
           // style={{ width: 160, height: 160 }}
           // resizeMode="contain"
-          className="w-40 h-40"
+          className="w-40 h-40 z-2"
         />
       </View>
 
