@@ -15,12 +15,7 @@ import { themeColors } from "../../themes";
 import { Feather } from "@expo/vector-icons";
 import { categories, coffeeItems } from "../../constants";
 import Carousel from "react-native-snap-carousel";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState(1);
   return (
