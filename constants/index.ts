@@ -1,4 +1,3 @@
-
 export const categories = [
   {
     id: 1,
@@ -29,7 +28,7 @@ export const coffeeItems = [
     price: "25.50",
     volume: "116 ml",
     stars: "4.6",
-    image: require("../assets/images/coffee1.png"),
+    image: require("../src/assets/images/coffee1.png"),
     desc: "The taste of coffee can vary depending on factors such as the type of beans, roast level, brewing method, and the addition of any flavors or sweeteners.",
   },
 
@@ -39,7 +38,7 @@ export const coffeeItems = [
     price: "15.50",
     volume: "110 ml",
     stars: "4.3",
-    image: require("../assets/images/coffee2.png"),
+    image: require("../src/assets/images/coffee2.png"),
     desc: "The taste of coffee can vary depending on factors such as the type of beans, roast level, brewing method, and the addition of any flavors or sweeteners.",
   },
 
@@ -49,7 +48,7 @@ export const coffeeItems = [
     price: "30.00",
     volume: "100 ml",
     stars: "4.0",
-    image: require("../assets/images/coffee3.png"),
+    image: require("../src/assets/images/coffee3.png"),
     desc: "The taste of coffee can vary depending on factors such as the type of beans, roast level, brewing method, and the addition of any flavors or sweeteners.",
   },
 
@@ -59,7 +58,7 @@ export const coffeeItems = [
     price: "10.30",
     volume: "80 ml",
     stars: "3.5",
-    image: require("../assets/images/coffee4.png"),
+    image: require("../src/assets/images/coffee4.png"),
     desc: "The taste of coffee can vary depending on factors such as the type of beans, roast level, brewing method, and the addition of any flavors or sweeteners.",
   },
 
@@ -69,7 +68,7 @@ export const coffeeItems = [
     price: "23.10",
     volume: "120 ml",
     stars: "4.7",
-    image: require("../assets/images/coffee5.png"),
+    image: require("../src/assets/images/coffee5.png"),
     desc: "The taste of coffee can vary depending on factors such as the type of beans, roast level, brewing method, and the addition of any flavors or sweeteners.",
   },
 ];
