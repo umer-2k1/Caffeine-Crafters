@@ -9,11 +9,13 @@ import {
   FlatList,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import CoffeeCard from "./src/components/CoffeeCard";
 // import { SafeAreaView } from 'react-native-safe-area-context';
 import { FontAwesome } from "@expo/vector-icons";
 import { themeColors } from "./themes";
 import { Feather } from "@expo/vector-icons";
 import { categories, coffeeItems } from "./constants";
+import Carousel from "react-native-snap-carousel";
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState(1);
@@ -61,28 +63,54 @@ export default function App() {
         </View>
         {/* categories */}
         <View className="px-5 mt-6">
-        <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        data={categories}
-        keyExtractor={(item) => item.id.toString()} // Uncomment if 'id' is not a string
-        renderItem={({ item }) => {
-          const isActive = item.id === activeCategory;
-          const activeTextClass = isActive ? 'text-[#fff]' : 'text-gray-700';
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={categories}
+            keyExtractor={(item) => item.id.toString()} // Uncomment if 'id' is not a string
+            renderItem={({ item }) => {
+              const isActive = item.id === activeCategory;
+              const activeTextClass = isActive
+                ? "text-[#fff]"
+                : "text-gray-700";
 
-          return (
-            <TouchableOpacity
-              style={{ backgroundColor: isActive? themeColors.bgLight : 'rgba(0, 0, 0, 0.07)'}}
-              className="p-4 px-5 rounded-full mr-2 shadow "
-              onPress={() => setActiveCategory(item.id)}
-            >
-              <Text className={`font-semibold ${activeTextClass}`}>{item.title}</Text>
-            </TouchableOpacity>
-          );
-        }}
-      />
+              return (
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: isActive
+                      ? themeColors.bgLight
+                      : "rgba(0, 0, 0, 0.07)",
+                  }}
+                  className="p-4 px-5 rounded-full mr-2 shadow "
+                  onPress={() => setActiveCategory(item.id)}
+                >
+                  <Text className={`font-semibold ${activeTextClass}`}>
+                    {item.title}
+                  </Text>
+                </TouchableOpacity>
+              );
+            }}
+            />
         </View>
-      </SafeAreaView>
+            </SafeAreaView>
+
+        {/* Carousel */}
+        <View className="overflow-visible flex justify-center mt-16 flex-1">
+          <View>
+
+          <Carousel
+            containerCustomStyle={{ overflow: "visible" }}
+            data={coffeeItems}
+            renderItem={({ item }) => <CoffeeCard item={item} />}
+            firstItem={1}
+            inactiveSlideOpacity={0.75}
+            inactiveSlideScale={0.75}
+            sliderWidth={400} //actual slide width
+            itemWidth={250} //card width
+            slideStyle={{ display: "flex", alignItems: "center" }}
+          />
+            </View>
+        </View>
     </View>
   );
 }
