@@ -15,8 +15,9 @@ import { themeColors } from "../../themes";
 import { Feather } from "@expo/vector-icons";
 import { categories, coffeeItems } from "../../constants";
 import Carousel from "react-native-snap-carousel";
-
+import { useNavigation } from "@react-navigation/native";
 export default function Home() {
+  const navigate = useNavigation();
   const [activeCategory, setActiveCategory] = useState(1);
   return (
     <View className="flex-1 relative bg-white">
@@ -112,6 +113,5 @@ export default function Home() {
         </View>
       </View>
     </View>
-    
   );
 }

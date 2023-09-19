@@ -3,11 +3,24 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import { themeColors } from "../../themes";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-interface CoffeeCardProps {
-  item: any;
-}
+import { useNavigation } from "@react-navigation/native";
+// interface CoffeeItem {
+//   id: number;
+//   name: string;
+//   price: string;
+//   volume: string;
+//   stars: string;
+//   image: any;
+//   desc: string;
+// }
 
-const CoffeeCard: React.FC<CoffeeCardProps> = ({ item }) => {
+// interface CoffeeCardProps {
+//   item: CoffeeItem;
+// }
+
+// const CoffeeCard: React.FC<CoffeeCardProps> = ({ item }) => {
+const CoffeeCard = ({ item }) => {
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -56,30 +69,28 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({ item }) => {
         </View>
 
         {/* price */}
-        <View 
-        // style={{
-        //   backgroundColor: themeColors.bgDark,
-        //   shadowColor: themeColors.bgDark,
-        //   shadowRadius: 25,
-        //   shadowOffset: {width:0, height:40},
-        //   shadowOpacity:0.8
-        // }}
-        className="flex-row justify-between items-center">
+        <View
+          // style={{
+          //   backgroundColor: themeColors.bgDark,
+          //   shadowColor: themeColors.bgDark,
+          //   shadowRadius: 25,
+          //   shadowOffset: {width:0, height:40},
+          //   shadowOpacity:0.8
+          // }}
+          className="flex-row justify-between items-center"
+        >
           <Text className="text-white font-bold text-lg">$ {item.price}</Text>
-          <TouchableOpacity 
-          className="p-4 bg-white rounded-full"
-          style={{
-            shadowColor: 'black',
-            shadowRadius: 40,
-            shadowOffset: {width: -20, height: -10},
-            shadowOpacity: 1,
-          }}
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Product", { ...item })}
+            className="p-4 bg-white rounded-full"
+            style={{
+              shadowColor: "black",
+              shadowRadius: 40,
+              shadowOffset: { width: -20, height: -10 },
+              shadowOpacity: 1,
+            }}
           >
-            <AntDesign
-              name="plus"
-              size={25}
-              color={themeColors.bgDark}
-            />
+            <AntDesign name="plus" size={25} color={themeColors.bgDark} />
           </TouchableOpacity>
         </View>
       </View>

@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./src/screens/HomeScreen";
 import NextScreen from "./src/screens/NextScreen";
+import Product from "./src/screens/Product";
 import { themeColors } from "./themes";
 import { Ionicons } from "@expo/vector-icons";
 import { View } from "react-native";
@@ -26,6 +27,11 @@ export default function App() {
             options={{ headerShown: false }}
             name="Home"
             component={HomeTabs}
+          />
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="Product"
+            component={Product}
           />
         </Stack.Navigator>
       </NavigationContainer>
