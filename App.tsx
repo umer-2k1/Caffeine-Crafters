@@ -47,6 +47,7 @@ function HomeTabs() {
           borderRadius: 50,
           marginBottom: 10,
           height: 65,
+          marginHorizontal: 20,
         },
         tabBarItemStyle: {
           // marginTop:30
