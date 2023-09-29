@@ -8,11 +8,11 @@ import { Ionicons } from "@expo/vector-icons";
 import { themeColors } from "../../themes";
 import { AntDesign } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
-const Product = (props: any) => {
+const Product: React.FC = (props: any) => {
   const item = props.route.params;
   const navigation = useNavigation();
-  const [size, setSize] = useState("Small");
-  const [quantity, setQuantity] = useState(1);
+  const [size, setSize] = useState<string>("Small");
+  const [quantity, setQuantity] = useState<number>(1);
   const incrementQuantity = (quantity: number) => {
     setQuantity(quantity + 1);
   };
