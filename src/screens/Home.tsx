@@ -57,9 +57,9 @@ export default function Home() {
 
           {/* search */}
           <View className="mx-5 mt-12 shadow">
-            <KeyboardAvoidingView
+            {/* <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : "height"}
-        >
+        > */}
             <View className="flex-row items-center rounded-full p-1 bg-[#e6e6e6]">
               <TextInput
                 placeholder="Search"
@@ -74,7 +74,7 @@ export default function Home() {
             </View>
           </View>
         </SafeAreaView>
-          <KeyboardAvoidingView/>
+        {/* <KeyboardAvoidingView/> */}
         {/* categories */}
         <View className="px-5 mt-6">
           <FlatList
